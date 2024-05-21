@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema(
     role: { type: String, enum: USER_ROLES_ENUM, default: USER_ROLES.READER },
 
     // TODO: encrypt field
-    password: { type: String },
+    password: { type: String, required: true },
   },
   {
     timestamps: true,

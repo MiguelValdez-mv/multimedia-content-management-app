@@ -1,12 +1,13 @@
 import express from "express";
+import consola from "consola";
+
+import { connectDb } from "./db";
 
 const app = express();
-const port = 3000;
+const port = 8080;
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+app.listen(port, async () => {
+  consola.info(`Server started at port ${port}`);
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  await connectDb();
 });

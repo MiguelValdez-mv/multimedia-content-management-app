@@ -1,0 +1,19 @@
+{
+  "name": "multimedia-content-management-api",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "author": "Miguel Valdez",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.5",
+    "@babel/node": "^7.23.9",
+    "@babel/preset-env": "^7.24.5",
+    "nodemon": "^3.1.0"
+  }
+}

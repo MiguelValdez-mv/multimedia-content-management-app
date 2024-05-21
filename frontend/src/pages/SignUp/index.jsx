@@ -3,12 +3,14 @@ import { Formik } from "formik";
 import { Page } from "../../components/layout/Page";
 import { Surface } from "../../components/layout/Surface";
 import { Text } from "../../components/atoms/Text";
+import { ToggleMenuIcon } from "../../components/atoms/ToggleMenuIcon";
 import { TextInput } from "../../components/atoms/TextInput";
 import { Button } from "../../components/atoms/Button";
 import { Form } from "../../components/atoms/Form";
 import { FORM_SCHEMES, USER_ROLES } from "../../constants";
 import { COPY } from "../../copy";
 import useActions from "./useActions";
+import { Menu, MenuOption } from "../../components/layout/Menu";
 
 function SignUp() {
   const { signUp, goToLoginPage } = useActions();
@@ -37,6 +39,7 @@ function SignUp() {
             values,
             errors,
             touched,
+            setFieldValue,
           }) => (
             <Form className="gap-4" onSubmit={handleSubmit}>
               <TextInput
@@ -66,6 +69,30 @@ function SignUp() {
                 onBlur={handleBlur}
                 error={touched.password && errors.password}
               />
+
+              <Menu
+                trigger={(isOpen) => (
+                  <Button
+                    className="justify-between font-normal"
+                    variant="outline-primary"
+                    endIcon={<ToggleMenuIcon isOpen={isOpen} />}
+                  >
+                    {COPY[`signUp.role.${values.role.toLowerCase()}`]}
+                  </Button>
+                )}
+              >
+                {(close) =>
+                  Object.values(USER_ROLES).map((role) => (
+                    <MenuOption
+                      key={role}
+                      onClick={() => setFieldValue("role", role)}
+                      close={close}
+                    >
+                      {COPY[`signUp.role.${role.toLowerCase()}`]}
+                    </MenuOption>
+                  ))
+                }
+              </Menu>
 
               <Button type="submit">{COPY["signUp.cta"]}</Button>
 

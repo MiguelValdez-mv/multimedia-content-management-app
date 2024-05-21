@@ -1,3 +1,5 @@
+import { forwardRef } from "react";
+
 import { twMerge } from "../../../utils/twMerge";
 import { Spinner } from "../Spinner";
 
@@ -10,20 +12,24 @@ const baseStyles = {
   none: "",
 };
 
-export function Button({
-  variant = "solid",
-  disabled,
-  spacing,
-  className,
-  type = "button",
-  onClick,
-  isLoading,
-  startIcon = null,
-  children,
-  endIcon = null,
-}) {
-  return (
+export const Button = forwardRef(
+  (
+    {
+      variant = "solid",
+      disabled,
+      spacing,
+      className,
+      type = "button",
+      onClick,
+      isLoading,
+      startIcon = null,
+      children,
+      endIcon = null,
+    },
+    ref
+  ) => (
     <button
+      ref={ref}
       className={twMerge(
         "gap-2 flex justify-center items-center rounded-xl font-bold p-2 outline-none active:drop-shadow-surface",
         baseStyles[variant],
@@ -41,5 +47,5 @@ export function Button({
 
       {endIcon}
     </button>
-  );
-}
+  )
+);

@@ -9,6 +9,8 @@ export const COPY = {
   "signUp.placeholder.email": "Correo electrónico",
   "signUp.placeholder.username": "Nombre de usuario",
   "signUp.placeholder.password": "Contraseña",
+  "signUp.role.creator": "Creador",
+  "signUp.role.reader": "Lector",
   "signUp.cta": "Crear cuenta",
   "signUp.login": "Inicia sesión",
 

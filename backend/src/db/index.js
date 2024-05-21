@@ -15,3 +15,5 @@ export async function connectDb() {
     consola.error(err);
   }
 }
+
+export * from "./models";

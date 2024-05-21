@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom";
 const useActions = () => {
   const navigate = useNavigate();
 
-  const signIn = () => {};
-  const goToSignUpPage = () => navigate("/registro");
+  const signUp = () => {};
+  const goToLoginPage = () => navigate("/login");
 
   return {
-    signIn,
-    goToSignUpPage,
+    signUp,
+    goToLoginPage,
   };
 };
 

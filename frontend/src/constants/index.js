@@ -16,4 +16,15 @@ export const FORM_SCHEMES = {
     email: string().email().required(),
     password: string().required(),
   }),
+  SIGN_UP: object().shape({
+    email: string().email().required(),
+    username: string().required(),
+    password: string().required(),
+    role: string().required(),
+  }),
+};
+
+export const USER_ROLES = {
+  CREATOR: "CREATOR",
+  READER: "READER",
 };

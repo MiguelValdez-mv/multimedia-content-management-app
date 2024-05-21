@@ -25,6 +25,20 @@ export const FORM_SCHEMES = {
 };
 
 export const USER_ROLES = {
+  ADMIN: "ADMIN",
   CREATOR: "CREATOR",
   READER: "READER",
+};
+
+const API_DOMAIN = "http://localhost:8080";
+
+export const API_URLS = {
+  USERS: `${API_DOMAIN}/users`,
+  LOGIN: `${API_DOMAIN}/users/login`,
+  SIGN_UP: `${API_DOMAIN}/users/sign-up`,
+  ME: `${API_DOMAIN}/users/me`,
+};
+
+export const QUERY_KEYS = {
+  DOES_SESSION_EXIST: "DOES_SESSION_EXIST",
 };

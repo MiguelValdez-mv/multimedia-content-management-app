@@ -11,7 +11,7 @@ import { COPY } from "../../copy";
 import useActions from "./useActions";
 
 function Login(props) {
-  const { signIn, goToSignUpPage } = useActions(props);
+  const { signIn, goToSignUpPage, isLoading } = useActions(props);
 
   return (
     <Page className="h-screen justify-center items-center">
@@ -53,7 +53,9 @@ function Login(props) {
                 error={touched.password && errors.password}
               />
 
-              <Button type="submit">{COPY["login.cta"]}</Button>
+              <Button type="submit" isLoading={isLoading}>
+                {COPY["login.cta"]}
+              </Button>
 
               <Button variant="outline" onClick={goToSignUpPage}>
                 {COPY["login.signUp"]}

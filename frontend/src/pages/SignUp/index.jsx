@@ -82,7 +82,7 @@ function SignUp() {
                 )}
               >
                 {(close) =>
-                  Object.values(USER_ROLES).map((role) => (
+                  [USER_ROLES.CREATOR, USER_ROLES.READER].map((role) => (
                     <MenuOption
                       key={role}
                       onClick={() => setFieldValue("role", role)}

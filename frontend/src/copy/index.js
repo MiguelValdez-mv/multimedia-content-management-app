@@ -4,6 +4,7 @@ export const COPY = {
   "login.placeholder.password": "Contraseña",
   "login.cta": "Iniciar sesión",
   "login.signUp": "Registrate",
+  "login.success": (username) => `Bienvenid@, ${username}`,
 
   "signUp.title": "Registrate",
   "signUp.placeholder.email": "Correo electrónico",

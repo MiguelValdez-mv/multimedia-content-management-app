@@ -14,6 +14,7 @@ export const COPY = {
   "signUp.role.reader": "Lector",
   "signUp.cta": "Crear cuenta",
   "signUp.login": "Inicia sesión",
+  "signUp.success": "Su cuenta ha sido creada exitosamente",
 
   "errors.requiredField": "Campo requerido",
   "errors.invalidEmail": "Correo electrónico no válido",

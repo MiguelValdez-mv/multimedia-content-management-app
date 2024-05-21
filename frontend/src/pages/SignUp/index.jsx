@@ -13,7 +13,7 @@ import useActions from "./useActions";
 import { Menu, MenuOption } from "../../components/layout/Menu";
 
 function SignUp() {
-  const { signUp, goToLoginPage } = useActions();
+  const { signUp, goToLoginPage, isLoading } = useActions();
 
   return (
     <Page className="h-screen justify-center items-center">
@@ -94,7 +94,9 @@ function SignUp() {
                 }
               </Menu>
 
-              <Button type="submit">{COPY["signUp.cta"]}</Button>
+              <Button type="submit" isLoading={isLoading}>
+                {COPY["signUp.cta"]}
+              </Button>
 
               <Button variant="outline" onClick={goToLoginPage}>
                 {COPY["signUp.login"]}

@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import consola from "consola";
 
 export async function connectDb() {
-  const uri = `mongodb://0.0.0.0:27017/multimedia-content-management-db`;
+  const uri = `mongodb://localhost/multimedia-content-management-db`;
   const config = {
     useNewUrlParser: true,
     useUnifiedTopology: true,

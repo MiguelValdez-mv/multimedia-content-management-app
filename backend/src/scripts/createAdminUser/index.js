@@ -39,7 +39,6 @@ async function createAdminUser() {
   });
 
   consola.success("Administrador creado exitosamente");
-
   process.exit(0);
 }
 

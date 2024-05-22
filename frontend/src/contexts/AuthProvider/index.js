@@ -1,7 +1,6 @@
 import { createContext, useReducer, useMemo } from "react";
 
 import { useDoesSessionExist } from "../../hooks/auth/useDoesSessionExist";
-import { getAuthToken } from "../../utils/authToken";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -42,9 +41,8 @@ export function AuthProvider({ children }) {
   const setUser = (user) => dispatch({ type: "SET_USER", payload: { user } });
 
   const { isLoading: isCheckingSession } = useDoesSessionExist({
-    enabled: !!getAuthToken(),
     staleTime: Infinity,
-    onSuccess: (res) => res.data && login(res.data),
+    onSuccess: ({ sessionExist, user }) => sessionExist && login(user),
   });
 
   const value = useMemo(

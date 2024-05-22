@@ -38,6 +38,8 @@ export const COPY = {
 
   "imgInput.label.selectImage": "Selecciona una imagen",
 
+  noDataYet: "Sin datos",
+
   // Errors
   "errors.requiredField": "Campo requerido",
   "errors.invalidEmail": "Correo electrónico no válido",

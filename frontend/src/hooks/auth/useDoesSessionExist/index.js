@@ -3,8 +3,14 @@ import { useQuery } from "react-query";
 import { API_URLS, QUERY_KEYS } from "../../../constants";
 import { axiosInstance } from "../../../utils/axios";
 
-function queryFn() {
-  return axiosInstance.get(API_URLS.ME);
+async function queryFn() {
+  try {
+    const { data: user } = await axiosInstance.get(API_URLS.ME);
+
+    return { sessionExist: !!user, user };
+  } catch (e) {
+    return { sessionExist: false };
+  }
 }
 
 export function useDoesSessionExist(opts) {

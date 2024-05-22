@@ -12,3 +12,9 @@ export async function createThematic(req, res) {
 
   return res.status(200).send(thematic);
 }
+
+export async function getThematics(req, res) {
+  const thematics = await Thematic.find();
+
+  return res.status(200).send(thematics);
+}

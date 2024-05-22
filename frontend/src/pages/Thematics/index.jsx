@@ -3,16 +3,17 @@ import { Content } from "../../components/layout/Content";
 import { Text } from "../../components/atoms/Text";
 import { Link } from "../../components/atoms/Link";
 import { Button } from "../../components/atoms/Button";
+import { ThematicList } from "../../components/app/thematics/ThematicList";
 import { IconAdd } from "../../assets/svgs/IconAdd";
 import { COPY } from "../../copy";
 import useActions from "./useActions";
 
 function Thematics() {
-  const { allowThematicCreation } = useActions();
+  const { isLoading, allowThematicCreation, thematics } = useActions();
 
   return (
     <Page>
-      <Content>
+      <Content className="gap-2" isLoading={isLoading}>
         {allowThematicCreation && (
           <Link className="self-end" to="/tematicas/crear-tematica">
             <Button startIcon={<IconAdd />}>
@@ -24,6 +25,8 @@ function Thematics() {
         <Text title bold>
           {COPY["thematics.title"]}
         </Text>
+
+        <ThematicList thematics={thematics} />
       </Content>
     </Page>
   );

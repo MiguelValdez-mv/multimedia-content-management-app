@@ -44,6 +44,7 @@ export const API_URLS = {
   ME: `${API_DOMAIN}/users/me`,
 
   THEMATICS: `${API_DOMAIN}/thematics`,
+  THEMATIC_BY_ID: (id) => `${API_DOMAIN}/thematics/thematic-by-id/${id}`,
 };
 
 export const QUERY_KEYS = {

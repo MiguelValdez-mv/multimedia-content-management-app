@@ -19,6 +19,7 @@ export const COPY = {
 
   "thematics.title": "Temáticas",
   "thematics.creation.title": "Agregar temática",
+  "thematics.removal.success": "Eliminación realizada exitosamente",
 
   "createThematic.title": "Agregar temática",
   "createThematic.success": "Temática agregada exitosamente",
@@ -39,6 +40,8 @@ export const COPY = {
   "imgInput.label.selectImage": "Selecciona una imagen",
 
   noDataYet: "Sin datos",
+
+  "thematicListItem.createdAt": "Fecha de creación",
 
   // Errors
   "errors.requiredField": "Campo requerido",

@@ -9,7 +9,8 @@ import { COPY } from "../../copy";
 import useActions from "./useActions";
 
 function Thematics() {
-  const { isLoading, allowThematicCreation, thematics } = useActions();
+  const { isLoading, allowThematicCreation, thematics, deleteThematic } =
+    useActions();
 
   return (
     <Page>
@@ -26,7 +27,7 @@ function Thematics() {
           {COPY["thematics.title"]}
         </Text>
 
-        <ThematicList thematics={thematics} />
+        <ThematicList thematics={thematics} deleteThematic={deleteThematic} />
       </Content>
     </Page>
   );

@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { Text } from "../../atoms/Text";
 import { Button } from "../../atoms/Button";
@@ -8,18 +8,26 @@ import { Row } from "../Row";
 import { useAuth } from "../../../hooks/useAuth";
 import { IconLogout } from "../../../assets/svgs/IconLogout";
 import { COPY } from "../../../copy";
+import { removeAuthToken } from "../../../utils/authToken";
 
 export function Header() {
-  const { user } = useAuth();
+  const { user, ...auth } = useAuth();
 
+  const navigate = useNavigate();
   const { pathname } = useLocation();
 
   const [, pathnameBase] = pathname.split("/");
 
+  const logout = () => {
+    auth.logout();
+    removeAuthToken();
+    navigate("/login");
+  };
+
   return (
     <Surface className="flex-row max-sm:flex-col justify-between items-center gap-5">
       <Row className="gap-5 max-sm:justify-between w-full">
-        <Button variant="outline" startIcon={<IconLogout />} />
+        <Button variant="outline" startIcon={<IconLogout />} onClick={logout} />
 
         <Col>
           <Text>{user.username}</Text>

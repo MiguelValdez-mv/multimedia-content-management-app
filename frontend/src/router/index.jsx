@@ -26,7 +26,7 @@ export function AppRouter() {
       <Route
         path="tematicas"
         element={
-          <RequireAuth allowedRoles={[USER_ROLES.ADMIN]}>
+          <RequireAuth>
             <Thematics />
           </RequireAuth>
         }

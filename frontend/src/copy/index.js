@@ -18,4 +18,7 @@ export const COPY = {
 
   "errors.requiredField": "Campo requerido",
   "errors.invalidEmail": "Correo electrónico no válido",
+
+  "header.thematics": "Temáticas",
+  "header.contents": "Contenidos",
 };

@@ -52,7 +52,10 @@ export function TextInput({
         />
 
         {type === "password" ? (
-          <IconButton onClick={() => setPasswordIsVisible((prev) => !prev)}>
+          <IconButton
+            onClick={() => setPasswordIsVisible((prev) => !prev)}
+            primary
+          >
             {passwordIsVisible ? <IconEyeInvisible /> : <IconEye />}
           </IconButton>
         ) : (

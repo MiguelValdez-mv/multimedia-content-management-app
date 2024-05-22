@@ -7,18 +7,21 @@ import { AuthProvider } from "./contexts/AuthProvider";
 import { AlertTemplate } from "./components/layout/AlertTemplate";
 import { Loader } from "./components/layout/Loader";
 import { Col } from "./components/layout/Col";
+import { Header } from "./components/layout/Header";
 import { useAuth } from "./hooks/useAuth";
 import "./global.css";
 
 const queryClient = new QueryClient();
 
 function Wrapper() {
-  const { isLoggedIn, user, isCheckingSession } = useAuth();
+  const { isCheckingSession, isLoggedIn } = useAuth();
 
   return isCheckingSession ? (
     <Loader />
   ) : (
-    <Col>
+    <Col className="gap-4 p-4">
+      {isLoggedIn && <Header />}
+
       <AppRouter />
     </Col>
   );

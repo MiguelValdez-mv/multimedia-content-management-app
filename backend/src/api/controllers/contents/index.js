@@ -1,5 +1,17 @@
 import { Content } from "../../../db";
 
+// TODO
+export async function createContent(req, res) {}
+
+export async function getContents(req, res) {
+  const contents = await Content.find();
+
+  return res.status(200).send(contents);
+}
+
+// TODO
+export async function updateContentById() {}
+
 export async function getContentById(req, res) {
   const { id } = req.params;
 

@@ -19,6 +19,9 @@ export async function getThematics(req, res) {
   return res.status(200).send(thematics);
 }
 
+// TODO
+export async function updateThematicById(req, es) {}
+
 export async function getThematicById(req, res) {
   const { id } = req.params;
 

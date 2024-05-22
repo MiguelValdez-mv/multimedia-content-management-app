@@ -12,7 +12,7 @@ export function verifyToken(req, res, next) {
 
   try {
     const payload = jwt.verify(token, ENV.JWT_SECRET);
-    req.email = payload.email;
+    req.userId = payload.userId;
     next();
   } catch (error) {
     return res.status(403).json({ message: "Token not valid" });

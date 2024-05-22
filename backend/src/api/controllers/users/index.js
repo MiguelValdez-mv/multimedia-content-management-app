@@ -17,7 +17,9 @@ export async function login(req, res) {
       .send({ message: "The data provided is not correct" });
   }
 
-  const token = jwt.sign({ email }, ENV.JWT_SECRET, { expiresIn: "3h" });
+  const token = jwt.sign({ userId: user._id }, ENV.JWT_SECRET, {
+    expiresIn: "3h",
+  });
 
   return res.status(200).json({ user, token });
 }
@@ -43,11 +45,22 @@ export async function signUp(req, res) {
 }
 
 export async function me(req, res) {
-  const { email } = req;
+  const { userId } = req;
 
-  const user = await User.findOne({ email });
+  const user = await User.findById(userId);
   if (!user) {
     return res.status(404).send({ message: "This user does not exist" });
+  }
+
+  return res.status(200).send(user);
+}
+
+export async function getUserById(req, res) {
+  const { id } = req.params;
+
+  const user = await User.findById(id);
+  if (!user) {
+    return res.status(404).send({ message: "User not found" });
   }
 
   return res.status(200).send(user);

@@ -3,6 +3,7 @@ import { Formik } from "formik";
 import { Form } from "../../../atoms/Form";
 import { TextInput } from "../../../atoms/TextInput";
 import { ImgInput } from "../../../atoms/ImgInput";
+import { Button } from "../../../atoms/Button";
 import { COPY } from "../../../../copy";
 
 export function ThematicForm({
@@ -12,6 +13,8 @@ export function ThematicForm({
   onSubmit,
   isLoading,
 }) {
+  const createThematic = action === "create";
+
   return (
     <Formik
       initialValues={initialValues}
@@ -27,9 +30,8 @@ export function ThematicForm({
         errors,
         touched,
         setFieldValue,
-        dirty,
       }) => (
-        <Form className="gap-2">
+        <Form className="gap-4" onSubmit={handleSubmit}>
           <TextInput
             id="name"
             label={COPY["thematicForm.label.name"]}
@@ -47,6 +49,10 @@ export function ThematicForm({
               setFieldValue("coverImage", e.currentTarget.files[0] ?? "")
             }
           />
+
+          <Button className="sm:self-end" type="submit" spacing>
+            {COPY[`thematicForm.${createThematic ? "add" : "update"}`]}
+          </Button>
         </Form>
       )}
     </Formik>

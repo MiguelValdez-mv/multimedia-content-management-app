@@ -1,8 +1,8 @@
 import { useRef, useState, useEffect } from "react";
-import Image from "rc-image";
 
 import { Label } from "../Label";
 import { Button } from "../Button";
+import { Image } from "../Image";
 import { Col } from "../../layout/Col";
 import { IconEdit } from "../../../assets/svgs/IconEdit";
 import { COPY } from "../../../copy";
@@ -37,11 +37,15 @@ export function ImgInput({
     <Col className="gap-2">
       {label && <Label htmlFor={id}>{label}</Label>}
 
-      <Col className="gap-2 items-center">
-        {preview && <Image className="rounded-xl w-60 h-60" src={preview} />}
+      <Col className="gap-2 items-start">
+        {preview && <Image className="w-60 h-60" src={preview} />}
 
         {!disabled && (
-          <Button startIcon={<IconEdit />} onClick={handleClick}>
+          <Button
+            startIcon={<IconEdit />}
+            variant="outline-primary"
+            onClick={handleClick}
+          >
             {COPY["imgInput.label.selectImage"]}
           </Button>
         )}

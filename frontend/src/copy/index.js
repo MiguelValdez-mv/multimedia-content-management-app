@@ -28,6 +28,8 @@ export const COPY = {
 
   "thematicForm.label.name": "Nombre",
   "thematicForm.label.coverImage": "Portada",
+  "thematicForm.add": "Añadir",
+  "thematicForm.save": "Guardar",
 
   "imgInput.label.selectImage": "Selecciona una imagen",
 

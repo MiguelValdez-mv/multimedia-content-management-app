@@ -2,7 +2,7 @@ import { Col } from "../../../layout/Col";
 import { NoDataYet } from "../../../molecules/NoDataYet";
 import { ContentListItem } from "../ContentListItem";
 
-export function ContentList({ contents }) {
+export function ContentList({ contents = [] }) {
   return (
     <Col className="gap-2">
       {contents.length ? (

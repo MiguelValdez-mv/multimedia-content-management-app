@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 
-import { useAuth } from "../../hooks/useAuth";
+import { useAuth } from "../../hooks/auth/useAuth";
 
 export function RequireAuth({ allowedRoles = [], children }) {
   const { isLoggedIn, user } = useAuth();

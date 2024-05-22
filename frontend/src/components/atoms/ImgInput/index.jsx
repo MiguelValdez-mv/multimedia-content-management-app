@@ -26,7 +26,6 @@ export function ImgInput({
   useEffect(() => {
     if (typeof image === "object") {
       const objectUrl = URL.createObjectURL(image);
-      console.log(objectUrl);
       setPreview(objectUrl);
 
       return () => URL.revokeObjectURL(objectUrl);

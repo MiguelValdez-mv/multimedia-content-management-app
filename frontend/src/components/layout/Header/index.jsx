@@ -5,7 +5,7 @@ import { Button } from "../../atoms/Button";
 import { Surface } from "../Surface";
 import { Col } from "../Col";
 import { Row } from "../Row";
-import { useAuth } from "../../../hooks/useAuth";
+import { useAuth } from "../../../hooks/auth/useAuth";
 import { IconLogout } from "../../../assets/svgs/IconLogout";
 import { COPY } from "../../../copy";
 import { removeAuthToken } from "../../../utils/authToken";

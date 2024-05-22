@@ -8,7 +8,7 @@ import { COPY } from "../../../copy";
 import useActions from "./useActions";
 
 function CreateThematic() {
-  const { handleSubmit } = useActions();
+  const { handleSubmit, isLoading } = useActions();
 
   return (
     <Page>
@@ -22,6 +22,7 @@ function CreateThematic() {
             initialValues={{ name: "", coverImage: "", contentTypes: [] }}
             validationSchema={FORM_SCHEMES.THEMATIC_CREATION}
             onSubmit={handleSubmit}
+            isLoading={isLoading}
           />
         </Surface>
       </Content>

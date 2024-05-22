@@ -21,6 +21,7 @@ export const COPY = {
   "thematics.creation.title": "Agregar temática",
 
   "createThematic.title": "Agregar temática",
+  "createThematic.success": "Temática agregada exitosamente",
 
   // Components
   "header.thematics": "Temáticas",

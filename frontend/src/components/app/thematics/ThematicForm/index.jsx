@@ -36,6 +36,7 @@ export function ThematicForm({
         errors,
         touched,
         setFieldValue,
+        dirty,
       }) => (
         <Form className="gap-4" onSubmit={handleSubmit}>
           <TextInput
@@ -91,7 +92,13 @@ export function ThematicForm({
             )}
           </Col>
 
-          <Button className="sm:self-end" type="submit" spacing>
+          <Button
+            className="sm:self-end"
+            type="submit"
+            isLoading={isLoading}
+            disabled={createThematic ? isLoading : isLoading || !dirty}
+            spacing
+          >
             {COPY[`thematicForm.${createThematic ? "add" : "update"}`]}
           </Button>
         </Form>

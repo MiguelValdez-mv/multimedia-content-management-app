@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-import { useSignUp } from "../../hooks/useSignUp";
+import { useSignUp } from "../../hooks/auth/useSignUp";
 import { useAlert } from "../../hooks/useAlert";
 import { COPY } from "../../copy";
 

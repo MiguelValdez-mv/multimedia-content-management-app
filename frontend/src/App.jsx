@@ -8,7 +8,7 @@ import { AlertTemplate } from "./components/layout/AlertTemplate";
 import { Loader } from "./components/layout/Loader";
 import { Col } from "./components/layout/Col";
 import { Header } from "./components/layout/Header";
-import { useAuth } from "./hooks/useAuth";
+import { useAuth } from "./hooks/auth/useAuth";
 import "./global.css";
 
 const queryClient = new QueryClient();

@@ -1,7 +1,7 @@
 import { useQueryClient, useMutation } from "react-query";
 
-import { axiosInstance } from "../../utils/axios";
-import { API_URLS, QUERY_KEYS } from "../../constants";
+import { axiosInstance } from "../../../utils/axios";
+import { API_URLS, QUERY_KEYS } from "../../../constants";
 
 function mutationFn(data) {
   return axiosInstance.post(API_URLS.SIGN_UP, data);

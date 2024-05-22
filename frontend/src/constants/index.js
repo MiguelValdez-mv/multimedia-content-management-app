@@ -42,11 +42,14 @@ export const API_URLS = {
   LOGIN: `${API_DOMAIN}/users/login`,
   SIGN_UP: `${API_DOMAIN}/users/sign-up`,
   ME: `${API_DOMAIN}/users/me`,
+
+  THEMATICS: `${API_DOMAIN}/thematics`,
 };
 
 export const QUERY_KEYS = {
   DOES_SESSION_EXIST: "DOES_SESSION_EXIST",
   USERS: "USERS",
+  THEMATICS: "THEMATICS",
 };
 
 export const CONTENT_TYPES = {

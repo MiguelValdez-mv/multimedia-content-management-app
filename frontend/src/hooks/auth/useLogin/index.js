@@ -1,8 +1,8 @@
 import { useQueryClient, useMutation } from "react-query";
 
-import { API_URLS, QUERY_KEYS } from "../../constants";
-import { setAuthToken } from "../../utils/authToken";
-import { axiosInstance } from "../../utils/axios";
+import { API_URLS, QUERY_KEYS } from "../../../constants";
+import { setAuthToken } from "../../../utils/authToken";
+import { axiosInstance } from "../../../utils/axios";
 import { useAuth } from "../useAuth";
 
 function mutationFn(data) {

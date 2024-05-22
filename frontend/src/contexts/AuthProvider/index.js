@@ -1,6 +1,6 @@
 import { createContext, useReducer, useMemo } from "react";
 
-import { useDoesSessionExist } from "../../hooks/useDoesSessionExist";
+import { useDoesSessionExist } from "../../hooks/auth/useDoesSessionExist";
 import { getAuthToken } from "../../utils/authToken";
 
 const reducer = (state, action) => {

@@ -1,11 +1,13 @@
 import express from "express";
 import consola from "consola";
 import cors from "cors";
+import path from "path";
 
 import { connectDb } from "./db";
 import { ENV } from "./constants";
-import userRouter from "./api/routes/users";
 import { errorHandler } from "./api/middlewares/error";
+import userRouter from "./api/routes/users";
+import thematicRouter from "./api/routes/thematics";
 
 const app = express();
 
@@ -13,8 +15,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Static files
+app.use("/uploads", express.static(path.join(__dirname, "./uploads")));
+
 // Routes
 app.use("/users", userRouter);
+app.use("/thematics", thematicRouter);
 
 // Error handling
 app.use(errorHandler);

@@ -1,10 +1,25 @@
 import { Page } from "../../components/layout/Page";
+import { Content } from "../../components/layout/Content";
 import { Text } from "../../components/atoms/Text";
+import { Link } from "../../components/atoms/Link";
+import { Button } from "../../components/atoms/Button";
+import { IconAdd } from "../../assets/svgs/IconAdd";
+import { COPY } from "../../copy";
 
 function Thematics() {
   return (
     <Page>
-      <Text>Thematics</Text>
+      <Content>
+        <Link className="self-end" to="/tematicas/crear-tematica">
+          <Button startIcon={<IconAdd />}>
+            {COPY["thematics.creation.title"]}
+          </Button>
+        </Link>
+
+        <Text title bold>
+          {COPY["thematics.title"]}
+        </Text>
+      </Content>
     </Page>
   );
 }

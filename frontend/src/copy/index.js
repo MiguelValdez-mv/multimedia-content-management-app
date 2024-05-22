@@ -1,4 +1,5 @@
 export const COPY = {
+  // Pages
   "login.title": "¡Bienvenido!",
   "login.placeholder.email": "Correo electrónico",
   "login.placeholder.password": "Contraseña",
@@ -16,9 +17,21 @@ export const COPY = {
   "signUp.login": "Inicia sesión",
   "signUp.success": "Su cuenta ha sido creada exitosamente",
 
-  "errors.requiredField": "Campo requerido",
-  "errors.invalidEmail": "Correo electrónico no válido",
+  "thematics.title": "Temáticas",
+  "thematics.creation.title": "Agregar temática",
 
+  "createThematic.title": "Agregar temática",
+
+  // Components
   "header.thematics": "Temáticas",
   "header.contents": "Contenidos",
+
+  "thematicForm.label.name": "Nombre",
+  "thematicForm.label.coverImage": "Portada",
+
+  "imgInput.label.selectImage": "Selecciona una imagen",
+
+  // Errors
+  "errors.requiredField": "Campo requerido",
+  "errors.invalidEmail": "Correo electrónico no válido",
 };

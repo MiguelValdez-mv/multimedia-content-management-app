@@ -9,6 +9,9 @@ const Default = LazyPage(lazy(() => import("../pages/Default")));
 const Login = LazyPage(lazy(() => import("../pages/Login")));
 const SignUp = LazyPage(lazy(() => import("../pages/SignUp")));
 const Thematics = LazyPage(lazy(() => import("../pages/Thematics")));
+const CreateThematic = LazyPage(
+  lazy(() => import("../pages/Thematics/Create"))
+);
 
 export function AppRouter() {
   return (
@@ -24,6 +27,15 @@ export function AppRouter() {
         element={
           <RequireAuth allowedRoles={[USER_ROLES.ADMIN]}>
             <Thematics />
+          </RequireAuth>
+        }
+      />
+
+      <Route
+        path="tematicas/crear-tematica"
+        element={
+          <RequireAuth allowedRoles={[USER_ROLES.ADMIN]}>
+            <CreateThematic />
           </RequireAuth>
         }
       />

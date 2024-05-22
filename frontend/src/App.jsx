@@ -19,7 +19,7 @@ function Wrapper() {
   return isCheckingSession ? (
     <Loader />
   ) : (
-    <Col className="gap-4 p-4">
+    <Col className="gap-4">
       {isLoggedIn && <Header />}
 
       <AppRouter />

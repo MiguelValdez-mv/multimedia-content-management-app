@@ -25,17 +25,8 @@ export function Header() {
   };
 
   return (
-    <Surface className="flex-row max-sm:flex-col justify-between items-center gap-5">
-      <Row className="gap-5 max-sm:justify-between w-full">
-        <Button variant="outline" startIcon={<IconLogout />} onClick={logout} />
-
-        <Col>
-          <Text>{user.username}</Text>
-          <Text muted>{user.email}</Text>
-        </Col>
-      </Row>
-
-      <Row className="gap-5  ">
+    <Surface className="flex-row max-sm:flex-col justify-between items-center gap-5 m-5">
+      <Row className="gap-5 max-sm:order-0">
         <Link to="/tematicas">
           <Text bold={pathnameBase === "tematicas"}>
             {COPY["header.thematics"]}
@@ -47,6 +38,15 @@ export function Header() {
             {COPY["header.contents"]}
           </Text>
         </Link>
+      </Row>
+
+      <Row className="gap-5 max-sm:justify-between max-sm:w-full">
+        <Col>
+          <Text>{user.username}</Text>
+          <Text muted>{user.email}</Text>
+        </Col>
+
+        <Button variant="outline" startIcon={<IconLogout />} onClick={logout} />
       </Row>
     </Surface>
   );

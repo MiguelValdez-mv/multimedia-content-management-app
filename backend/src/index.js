@@ -8,6 +8,7 @@ import { ENV } from "./constants";
 import { errorHandler } from "./api/middlewares/error";
 import userRouter from "./api/routes/users";
 import thematicRouter from "./api/routes/thematics";
+import contentRouter from "./api/routes/contents";
 
 const app = express();
 
@@ -19,8 +20,9 @@ app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "./uploads")));
 
 // Routes
-app.use("/users", userRouter);
 app.use("/thematics", thematicRouter);
+app.use("/contents", contentRouter);
+app.use("/users", userRouter);
 
 // Error handling
 app.use(errorHandler);

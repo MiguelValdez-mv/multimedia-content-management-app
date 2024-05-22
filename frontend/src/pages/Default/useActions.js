@@ -1,17 +1,9 @@
 import { useAuth } from "../../hooks/useAuth";
-import { isAdminUser } from "../../utils/checkUserRole";
 
 const useActions = () => {
-  const { isLoggedIn, user } = useAuth();
+  const { isLoggedIn } = useAuth();
 
-  let to;
-  if (!isLoggedIn) {
-    to = "/login";
-  } else if (isAdminUser(user)) {
-    to = "/tematicas";
-  } else {
-    to = "/contenidos";
-  }
+  const to = isLoggedIn ? "/tematicas" : "/login";
 
   return { to };
 };

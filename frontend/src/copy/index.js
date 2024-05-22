@@ -28,6 +28,10 @@ export const COPY = {
 
   "thematicForm.label.name": "Nombre",
   "thematicForm.label.coverImage": "Portada",
+  "thematicForm.label.contentTypes": "Tipos de contenido",
+  "thematicForm.label.contentTypes.text": "Texto",
+  "thematicForm.label.contentTypes.videoUrl": "Url de Youtube",
+  "thematicForm.label.contentTypes.image": "Imagen",
   "thematicForm.add": "Añadir",
   "thematicForm.save": "Guardar",
 

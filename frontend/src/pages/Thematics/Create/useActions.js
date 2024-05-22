@@ -1,5 +1,7 @@
 const useActions = () => {
-  return null;
+  const handleSubmit = () => {};
+
+  return { handleSubmit };
 };
 
 export default useActions;

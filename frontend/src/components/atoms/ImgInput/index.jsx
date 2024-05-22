@@ -3,6 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import { Label } from "../Label";
 import { Button } from "../Button";
 import { Image } from "../Image";
+import { Text } from "../Text";
 import { Col } from "../../layout/Col";
 import { IconEdit } from "../../../assets/svgs/IconEdit";
 import { COPY } from "../../../copy";
@@ -15,6 +16,7 @@ export function ImgInput({
   onChange,
   accept = ".jpg, .jpeg, .png",
   multiple,
+  error,
 }) {
   const inputRef = useRef();
   const [preview, setPreview] = useState("");
@@ -50,6 +52,8 @@ export function ImgInput({
           </Button>
         )}
       </Col>
+
+      {error && <Text error>{error}</Text>}
 
       <input
         ref={inputRef}

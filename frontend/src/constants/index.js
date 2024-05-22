@@ -1,4 +1,4 @@
-import { setLocale, object, string } from "yup";
+import { setLocale, object, string, mixed, array } from "yup";
 
 import { COPY } from "../copy";
 
@@ -22,6 +22,11 @@ export const FORM_SCHEMES = {
     password: string().required(),
     role: string().required(),
   }),
+  THEMATIC_CREATION: object().shape({
+    name: string().required(),
+    coverImage: mixed().required(),
+    contentTypes: array().of(string()).min(1),
+  }),
 };
 
 export const USER_ROLES = {
@@ -42,4 +47,10 @@ export const API_URLS = {
 export const QUERY_KEYS = {
   DOES_SESSION_EXIST: "DOES_SESSION_EXIST",
   USERS: "USERS",
+};
+
+export const CONTENT_TYPES = {
+  TEXT: "TEXT",
+  IMAGE: "IMAGE",
+  VIDEO_URL: "VIDEO_URL",
 };

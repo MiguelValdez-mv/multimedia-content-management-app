@@ -45,12 +45,15 @@ export const API_URLS = {
 
   THEMATICS: `${API_DOMAIN}/thematics`,
   THEMATIC_BY_ID: (id) => `${API_DOMAIN}/thematics/thematic-by-id/${id}`,
+
+  CONTENTS: `${API_DOMAIN}/contents`,
 };
 
 export const QUERY_KEYS = {
   DOES_SESSION_EXIST: "DOES_SESSION_EXIST",
   USERS: "USERS",
   THEMATICS: "THEMATICS",
+  CONTENTS: "CONTENTS",
 };
 
 export const CONTENT_TYPES = {

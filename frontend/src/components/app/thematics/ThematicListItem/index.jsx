@@ -6,8 +6,12 @@ import { Text } from "../../../atoms/Text";
 import { Image } from "../../../atoms/Image";
 import { COPY } from "../../../../copy";
 import { Button } from "../../../atoms/Button";
+import { useAuth } from "../../../../hooks/auth/useAuth";
+import { isAdminUser } from "../../../../utils/checkUserRole";
 
 export function ThematicListItem({ thematic, deleteThematic }) {
+  const { user } = useAuth();
+
   const { name, coverImage, createdAt } = thematic;
 
   return (
@@ -29,9 +33,11 @@ export function ThematicListItem({ thematic, deleteThematic }) {
         />
       </Col>
 
-      <Button variant="outline-primary" onClick={deleteThematic}>
-        Eliminar
-      </Button>
+      {isAdminUser(user) && (
+        <Button variant="outline-primary" onClick={deleteThematic}>
+          {COPY["thematicListItem.delete"]}
+        </Button>
+      )}
     </Surface>
   );
 }

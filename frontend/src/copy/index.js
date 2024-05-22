@@ -24,6 +24,9 @@ export const COPY = {
   "createThematic.title": "Agregar temática",
   "createThematic.success": "Temática agregada exitosamente",
 
+  "contents.title": "Contenidos",
+  "contenido.creation.title": "Añadir contenido",
+
   // Components
   "header.thematics": "Temáticas",
   "header.contents": "Contenidos",
@@ -42,6 +45,7 @@ export const COPY = {
   noDataYet: "Sin datos",
 
   "thematicListItem.createdAt": "Fecha de creación",
+  "thematicListItem.delete": "Eliminar",
 
   // Errors
   "errors.requiredField": "Campo requerido",
